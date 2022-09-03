@@ -1,4 +1,6 @@
-// bubble sort - O(n^2)
+// bubble sort
+// time complexity - O(n^2)
+// space complexity - O(1)
 
 #include <iostream>
 

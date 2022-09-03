@@ -1,4 +1,5 @@
-// tower of hanoi recursive problem - O(2^n)
+// tower of hanoi recursive problem
+// time complexity - O(2^n)
 
 #include <iostream>
 

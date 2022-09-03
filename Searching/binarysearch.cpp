@@ -1,4 +1,6 @@
-// binary search - O(log n)
+// binary search 
+// time complexity - O(log n)
+// space complexity - O(1)
 
 #include <iostream>
 
