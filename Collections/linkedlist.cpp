@@ -23,6 +23,13 @@ public:
         this->head = nullptr;
     }
 
+    // prepend the list
+    void prepend(int data) {
+        Node* newNode = new Node(data);
+        newNode->next = this->head;
+        this->head = newNode;
+    }
+
     // append the list
     void append(int data) {
         Node* new_node = new Node(data);
@@ -84,6 +91,15 @@ public:
             current->next = current->next->next;
             delete temp;
         }
+    }
+
+    // delete first
+    Node delete_first() {
+        Node* temp = this->head;
+        this->head = this->head->next;
+        Node deleted = *temp;
+        delete temp;
+        return deleted;
     }
 
     //get data at position n with subscript operator
