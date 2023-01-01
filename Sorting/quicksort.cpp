@@ -42,11 +42,15 @@ int partition(int arr[], int low, int high) {
     return left_idx;        // return the new index of the pivot
 }
 
+// quicksort is an algorithm that recursively partitions an array according to a 'pivot',
+// moves elements greater than the pivot to its right, and elements less than the pivot to its left
 void quick_sort(int arr[], int low, int high) {
-    if (low < high) {
-        int pi = partition(arr, low, high);    // partition the array
-        quick_sort(arr, low, pi - 1);       // sort the left subarray
-        quick_sort(arr, pi + 1, high);   // sort the right subarray
+    if (low < high) {                           // if length of array on this level is greater than 1
+        int pi = partition(arr, low, high);    // partition array on this level
+
+        // run quick_sort() recursively on children
+        quick_sort(arr, low, pi - 1); 
+        quick_sort(arr, pi + 1, high);
     }
 }
 
@@ -55,6 +59,6 @@ int main(int argc, char const *argv[]) {
     int n = sizeof(arr)/sizeof(arr[0]);
     quick_sort(arr, 0, n-1);
     for(int i = 0; i < n; ++i)
-        std::cout << arr[i] << " ";
+        cout << arr[i] << " ";
     return 0;
 }

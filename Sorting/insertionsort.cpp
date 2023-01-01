@@ -4,6 +4,8 @@
 
 #include <iostream>
 
+// in insertion sort you essentially iterate the array (in this case from left to right),
+// and at every step, move the current element left till its in a position where the element to its right is greater
 void insertion_sort(int arr[], int n){
     for(int i = 1; i < n; ++i){
         int key = arr[i];

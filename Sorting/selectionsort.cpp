@@ -4,7 +4,7 @@
 
 #include <iostream>
 
-// helper to find minimum element in array using linear search
+// helper to find index of minimum element in array using linear search
 int argmin(int arr[], int n){
     int min = arr[0];
     int min_index = 0;
@@ -17,18 +17,19 @@ int argmin(int arr[], int n){
     return min_index;
 }
 
+// in selection sort you swap the minimum element of the array with the left element till the array is fully sorted
 void selection_sort(int arr[], int n){
     int left = 0;
     do{
         int min_index = left + argmin(arr + left, n - left);   // slice array by applying an offset of 'left' to the pointer and size
 
-        if (min_index != left){
+        if (min_index != left){     // if minimum element is not at the left
             int temp = arr[left];
             arr[left] = arr[min_index];
-            arr[min_index] = temp;
+            arr[min_index] = temp;  // swap the minimum and left element
         }
-        ++left;
-    } while(left < n-1);
+        ++left;                     // discard part of array already sorted
+    } while(left < n-1);            // stop when length of unsorted part of array is 0
 }
 
 int main(int argc, char const *argv[]) {
