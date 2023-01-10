@@ -15,6 +15,7 @@ public:
     }
 };
 
+// A list where each element stores a reference to the next element
 class LinkedList {
 public:
     Node* head;
@@ -127,8 +128,7 @@ public:
 };
 
 
-int main(int argc, char const *argv[])
-{
+int main(int argc, char const *argv[]){
     LinkedList list;
     list.append(1);
     list.append(2);

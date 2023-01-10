@@ -4,6 +4,7 @@
 using std::cout;
 using std::endl;
 
+// A linear collection where items inserted are removed in reverse order (LIFO)
 class Stack {
 public:
     LinkedList* storage;

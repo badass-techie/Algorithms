@@ -4,6 +4,7 @@
 using std::cout;
 using std::endl;
 
+// A linear collection where items inserted are removed in the same order (FIFO)
 class Queue {
 public:
     LinkedList* storage;

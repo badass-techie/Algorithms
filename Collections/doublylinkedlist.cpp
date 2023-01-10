@@ -16,6 +16,7 @@ public:
     }
 };
 
+// A list where each element stores a reference to the next and previous elements
 class DoublyLinkedList {
 public:
     Node* head;
