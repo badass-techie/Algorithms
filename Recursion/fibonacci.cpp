@@ -1,5 +1,11 @@
+// fibonacci number
+// time complexity: O(n)
+// space complexity: O(1)
+
 #include <iostream>
 
+// get the nth fibonacci number by recursively summing the (n-1)th and (n-2)th fibonacci numbers
+// the base case is n = 0 or 1, which returns n
 int get_fibonacci(int n) {
     if (n < 0) {
         return -1;
