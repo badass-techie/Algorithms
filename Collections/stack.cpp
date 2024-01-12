@@ -1,28 +1,33 @@
 #include <iostream>
-#include <linkedlist.cpp>
+#include "linkedlist.cpp"
 
 using std::cout;
 using std::endl;
 
 // A linear collection where items inserted are removed in reverse order (LIFO)
+template <typename T>
 class Stack {
 public:
-    LinkedList* storage;
+    LinkedList<T>* storage;
 
     Stack() {
-        this->storage = new LinkedList();
+        this->storage = new LinkedList<T>();
     }
 
-    void push(int data) {
+    void push(T data) {
         this->storage->prepend(data);
     }
 
-    int pop() {
+    T pop() {
         return this->storage->delete_first().data;
     }
 
-    int peek() {
+    T peek() {
         return (*(this->storage))[0];
+    }
+
+    bool is_empty() {
+        return this->storage->is_empty();
     }
 
     void print() {
@@ -30,15 +35,15 @@ public:
     }
 };
 
-int main(int argc, char const *argv[])
-{
-    Stack stack;
-    stack.push(1);
-    stack.push(2);
-    stack.push(3);
-    cout << stack.peek() << endl;
-    cout << stack.pop() << endl;
-    cout << stack.pop() << endl;
-    cout << stack.pop() << endl;
-    return 0;
-}
+// int main(int argc, char const *argv[])
+// {
+//     Stack<int> stack;
+//     stack.push(1);
+//     stack.push(2);
+//     stack.push(3);
+//     cout << stack.peek() << endl;
+//     cout << stack.pop() << endl;
+//     cout << stack.pop() << endl;
+//     cout << stack.pop() << endl;
+//     return 0;
+// }
